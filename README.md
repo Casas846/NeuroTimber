@@ -33,7 +33,7 @@ Users can test this platform with their own files or our sample files, available
 !pip3 install -r requirements.txt -q
 ```
 
-3. Set the paths for the uploaded files in the code and replace it in the execution platform
+3. Set the paths for the uploaded files and replace it in the execution platform
 ```python
 weights = '/content/yolov9-c-wooddetection-converted.pt' #Detection Model
 data = '/content/wooddetection.yaml' #Model Labels 
