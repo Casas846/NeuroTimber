@@ -17,7 +17,7 @@ To use this repository, please ensure you upload the following files:
 3. Pre-Harvest Forest Inventory Data (.xlsx file): An Excel file containing diameter data obtained from stem taper analysis of trees in the pre-harvest inventory.
 4. Stacked Timber Video (.mp4): A video of the stacked timber for which you want to estimate the volume.
 
-Users can test this execution platform using our sample data, available for download at the following link: https://drive.google.com/drive/folders/1Bj0P8ypXSGoexGWXApSrmuHzK8K8bJBv?usp=sharing
+Users can test this platform with their own files or our sample files, available for download at the following link: https://drive.google.com/drive/folders/1Bj0P8ypXSGoexGWXApSrmuHzK8K8bJBv?usp=sharing
 
 ####  Installation and Setup
 
