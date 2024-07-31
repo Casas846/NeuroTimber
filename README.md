@@ -5,50 +5,43 @@
 ### NeuroTimber: Estimating Stacked Timber Volume Using AI Detection and Diameter Distribution Models
 
 #### Introduction
-NeuroTimber is a cutting-edge project that aims to estimate the volume of stacked timber using advanced artificial intelligence techniques. By leveraging YOLOv9 for detection and Scipy for distribution fitting, NeuroTimber provides accurate and efficient volume estimation.
+NeuroTimber is an execution platform designed to assist users in estimating the volume of stacked timber. This platform allows users to upload their own detection models and pre-harvest forest inventory data, including detailed tree measurements such as diameter at different heights obtained through stem taper analysis. By integrating YOLOv9 for object detection and Scipy for fitting statistical distributions, NeuroTimber provides a flexible and efficient framework for users to process their timber data and obtain volume estimates.
 
-#### Methodology
-1. **Installation of Necessary Packages**: 
-   We begin by installing essential packages like numpy, OpenCV, torch, supervision, IPython, pandas, scipy, and matplotlib.\
-   
-   ```python
-   # Install necessary packages
-   !pip install numpy opencv-python-headless torch supervision IPython pandas scipy matplotlib
-   
-3. **Cloning YOLOv9 Repository**:
-   The YOLOv9 repository is cloned to access the required models.
+The methodology involves several key steps. Users first upload their trained YOLOv9 detection models and corresponding labels, along with pre-harvest forest inventory data and video footage of stacked timber. NeuroTimber then processes the video to detect and count the logs, fits statistical distributions to the log diameters from the inventory data, and calculates the estimated volume of the timber stack based on these detections and distributions. This approach ensures that users can leverage their specific models tailored to their unique datasets and requirements.
 
-   ```python
-   # Clone the YOLOv9 repository to access the models
-   !git clone https://github.com/SkalskiP/yolov9.git
-   %cd yolov9
-   !pip3 install -r requirements.txt -q
-   
-4. **Detection with YOLOv9**:
-   We extend Supervision's Detections to handle YOLOv9 results, facilitating accurate detection of timber logs.
+#### Required Uploads
+To use this repository, please ensure you upload the following files:
 
-   ```python
-   # Extending Supervision's `Detections` to Handle YOLOv9 Results
-class ExtendedDetections(BaseDetections):
-    @classmethod
-    def from_yolov9(cls, yolov9_results):
-        xyxy, confidences = yolov9_results.xyxy[0].cpu().numpy(), yolov9_results.pred[0][:, 4].cpu().numpy()
-        return cls(
-            xyxy=xyxy,
-            confidences=confidences,
-            class_ids=yolov9_results.pred[0][:, 5].cpu().numpy().astype(int)
-        )
+1. Detection Model (.pt file): This is the YOLOv9 model trained for log detection.
+2. Model Labels (.yaml file): The corresponding labels for the detection model.
+3. Pre-Harvest Forest Inventory Data (.xlsx file): An Excel file containing diameter data obtained from stem taper analysis of trees in the pre-harvest inventory.
+4. Stacked Timber Video (.mp4): A video of the stacked timber for which you want to estimate the volume.
 
-5.  **Volume Estimation**:
-   The detected timber logs are analyzed using Scipy to fit diameter distributions, allowing precise volume estimation.
+####  Installation and Setup
 
-   ```python
-   # Fitting diameter distributions using Scipy
-   from scipy.stats import genextreme, powernorm, pearson3, genhyperbolic, johnsonsu, skewnorm, nct, gennorm, exponnorm, norm, dweibull, dgamma, t
+1. Install necessary packages
+```python
+!pip install numpy opencv-python-headless torch supervision IPython pandas scipy matplotlib
+```
 
-   # Example distribution fitting
-   data = [log['diameter'] for log in detected_logs]
-   params = genextreme.fit(data)
+2. Clone the YOLOv9 repository to access the models
+```python
+!git clone https://github.com/SkalskiP/yolov9.git
+%cd yolov9
+!pip3 install -r requirements.txt -q
+```
 
-#### Results
-The NeuroTimber project successfully integrates YOLOv9 and Scipy to provide a robust solution for timber volume estimation. The methodology ensures high accuracy and efficiency, making it an invaluable tool for forestry and timber industries.
+3. Set the paths for the uploaded files in the code and replace it in the execution platform
+```python
+weights = '/content/yolov9-c-wooddetection-converted.pt' #Detection Model
+data = '/content/wooddetection.yaml' #Model Labels 
+SOURCE_VIDEO_PATH = '/content/Test_Video.mp4' #Input Video Processing 
+TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing 
+data_path = '/content/dados.xlsx' #Pre-Harvest Forest Inventory Data 
+```
+# Contacts
+For any questions, feedback, comments, or inquiries, please contact me at:
+
+Gianmarco Goycochea Casas.
+Federal University of Viçosa, Brazil.
+Email: gianmarco.casas@ufv.br.
