@@ -42,7 +42,7 @@ TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing
 data_path = '/content/dados.xlsx' #Pre-Harvest Forest Inventory Data 
 ```
 # Contacts
-For any questions, feedback, comments, or inquiries, please contact me at:
+For any colaborations, questions, feedback, comments, or inquiries, please contact me at:
 
 Gianmarco Goycochea Casas.
 Federal University of Viçosa, Brazil.
