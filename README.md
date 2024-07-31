@@ -41,9 +41,49 @@ SOURCE_VIDEO_PATH = '/content/Test_Video.mp4' #Input Video Processing
 TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing 
 data_path = '/content/dados.xlsx' #Pre-Harvest Forest Inventory Data 
 ```
+
+4. Set Log Length and replace it in the execution platform
+```python
+log_length = 6  # Customize log length in meters as needed
+```
+####  Volume Estimation Process Explanation
+
+1. Volume Observed for Each Class
+
+This line calculates the observed volume for each class of logs.
+```python
+volume_observed = (np.pi / 40000) * (class_number ** 2) * log_length * 0.75 # Customize as needed
+```
+Where:\
+.  class_number: Represents the diameter class of the logs.\
+.  log_length: The customizable length of the logs.\
+.  np.pi / 40000: A scaling factor for the calculation.\
+.  0.75: A form factor or shape factor applied to the logs. 
+
+2. Estimated Volume for Each Class
+
+This line calculates the estimated volume for each class by multiplying the observed volume with the probability and the log count. 
+```python
+volume_estimated = probability * log_count * volume_observed
+```
+Where:\
+.  probability: The likelihood of a log being in a particular class.\
+.  log_count: The number of logs in that class.\
+.  volume_observed: The previously calculated observed volume for the class.
+
+3. Total Estimated Volume
+
+This line accumulates the estimated volume for each class into a total estimated volume.
+```python
+total_volume_estimated += volume_estimated
+```
+Where:\
+.  volume_estimated: The estimated volume for the current class.\
+.  total_volume_estimated: The running total of the estimated volume across all classes.
+
 # Contacts
 For any colaborations, questions, feedback, comments, or inquiries, please contact me at:
 
-Gianmarco Goycochea Casas.
-Federal University of Viçosa, Brazil.
-Email: gianmarco.casas@ufv.br.
+Gianmarco Goycochea Casas\
+Federal University of Viçosa, Brazil\
+Email: gianmarco.casas@ufv.br
