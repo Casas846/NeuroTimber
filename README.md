@@ -45,13 +45,13 @@ data_path = '/content/dados.xlsx' #Stem Diameter data
 ```python
 x_values = np.arange(1, 36) # Customize diameter class range in centimeters as needed
 ```
-5. Set Log Length and replace it in the execution platform
+5. Set log length and replace it in the execution platform
 ```python
 log_length = 6  # Customize log length in meters as needed
 ```
 ####  Volume Estimation Process Explanation
 
-1. Volume Observed for Each Class
+1. Volume observed for each class
 
 This line calculates the observed volume for each class of logs.
 ```python
@@ -62,7 +62,7 @@ Where:\
 .  log_length: The customizable length of the logs.\
 .  np.pi / 40000: A scaling factor for the calculation.
 
-2. Estimated Volume for Each Class
+2. Estimated volume for each class
 
 This line calculates the estimated volume for each class by multiplying the observed volume with the probability and the log count. 
 ```python
@@ -73,7 +73,7 @@ Where:\
 .  log_count: The number of logs in that class.\
 .  volume_observed: The previously calculated observed volume for the class.
 
-3. Total Estimated Volume
+3. Total estimated volume
 
 This line accumulates the estimated volume for each class into a total estimated volume.
 ```python
