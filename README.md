@@ -39,7 +39,7 @@ weights = '/content/yolov9-c-wooddetection-converted.pt' #Detection Model
 data = '/content/wooddetection.yaml' #Model Labels 
 SOURCE_VIDEO_PATH = '/content/Test_Video.mp4' #Input Video Processing 
 TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing 
-data_path = '/content/dados.xlsx' #Pre-Harvest Forest Inventory Data 
+data_path = '/content/dados.xlsx' #Stem Diameter data 
 ```
 
 4. Set Log Length and replace it in the execution platform
