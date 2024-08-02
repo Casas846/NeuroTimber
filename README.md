@@ -57,7 +57,7 @@ volume_observed = (np.pi / 40000) * (class_number ** 2) * log_length
 Where:\
 .  class_number: Represents the diameter class of the logs.\
 .  log_length: The customizable length of the logs.\
-.  np.pi / 40000: A scaling factor for the calculation.\
+.  np.pi / 40000: A scaling factor for the calculation.
 
 2. Estimated Volume for Each Class
 
