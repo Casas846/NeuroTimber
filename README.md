@@ -5,16 +5,16 @@
 ### NeuroTimber: Estimating Stacked Timber Volume Using AI Detection and Diameter Distribution Models
 
 #### Introduction
-NeuroTimber is an execution platform designed to assist users in estimating the volume of stacked timber. This platform allows users to upload their own detection models and pre-harvest forest inventory data, including detailed tree measurements such as diameter at different heights obtained through stem taper analysis. By integrating YOLOv9 for object detection and Scipy for fitting statistical distributions, NeuroTimber provides a flexible and efficient framework for users to process their timber data and obtain volume estimates.
+NeuroTimber is an execution platform designed to assist users in estimating the volume of stacked timber. This platform allows users to upload their own detection models and diameter data at specific heights derived from stem taper analysis. By integrating YOLOv9 for object detection and Scipy for fitting statistical distributions, NeuroTimber provides a flexible and efficient framework for users to process their timber data and obtain volume estimates.
 
-The methodology involves several key steps. Users first upload their trained YOLOv9 detection models and corresponding labels, along with pre-harvest forest inventory data and video footage of stacked timber. NeuroTimber then processes the video to detect and count the logs, fits statistical distributions to the log diameters from the inventory data, and calculates the estimated volume of the timber stack based on these detections and distributions. This approach ensures that users can leverage their specific models tailored to their unique datasets and requirements.
+The methodology involves several key steps. Users first upload their trained YOLOv9 detection models and corresponding labels, along with stem diameter data and video footage of stacked timber. NeuroTimber then processes the video to detect and count the logs, fits statistical distributions to the stem diameter, and calculates the estimated volume of the timber stack based on these detections and distributions. This approach ensures that users can leverage their specific models tailored to their unique datasets and requirements.
 
 #### Required Uploads
 To use this repository, please ensure you upload the following files:
 
 1. Detection Model (.pt file): This is the YOLOv9 model trained for log detection.
 2. Model Labels (.yaml file): The corresponding labels for the detection model.
-3. Pre-Harvest Forest Inventory Data (.xlsx file): An Excel file containing diameter data obtained from stem taper analysis of trees in the pre-harvest inventory.
+3. Stem Diameter Data (.xlsx file): An Excel file containing diameter data obtained from stem taper analysis of trees in the pre-harvest inventory.
 4. Stacked Timber Video (.mp4): A video of the stacked timber for which you want to estimate the volume.
 
 Users can test this platform with their own files or our sample files, available for download at the following link: https://drive.google.com/drive/folders/1Bj0P8ypXSGoexGWXApSrmuHzK8K8bJBv?usp=sharing
@@ -52,13 +52,12 @@ log_length = 6  # Customize log length in meters as needed
 
 This line calculates the observed volume for each class of logs.
 ```python
-volume_observed = (np.pi / 40000) * (class_number ** 2) * log_length * 0.75 # Customize as needed
+volume_observed = (np.pi / 40000) * (class_number ** 2) * log_length
 ```
 Where:\
 .  class_number: Represents the diameter class of the logs.\
 .  log_length: The customizable length of the logs.\
 .  np.pi / 40000: A scaling factor for the calculation.\
-.  0.75: A form factor or shape factor applied to the logs. 
 
 2. Estimated Volume for Each Class
 
