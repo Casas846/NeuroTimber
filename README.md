@@ -41,8 +41,11 @@ SOURCE_VIDEO_PATH = '/content/Test_Video.mp4' #Input Video Processing
 TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing 
 data_path = '/content/dados.xlsx' #Stem Diameter data 
 ```
-
-4. Set Log Length and replace it in the execution platform
+4. Set diameter class range and replace it in the execution platform
+```python
+x_values = np.arange(1, 36) # Customize diameter class range in centimeters as needed
+```
+5. Set Log Length and replace it in the execution platform
 ```python
 log_length = 6  # Customize log length in meters as needed
 ```
