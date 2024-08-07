@@ -41,14 +41,24 @@ SOURCE_VIDEO_PATH = '/content/Test_Video.mp4' #Input Video Processing
 TARGET_VIDEO_PATH = '/content/Demo_Video.mp4' #Output Video Processing 
 data_path = '/content/dados.xlsx' #Stem Diameter data 
 ```
-4. Set diameter class range and replace it in the execution platform
+
+4. Set the diameter class range and replace it in the execution platform
 ```python
 x_values = np.arange(1, 36) # Customize diameter class range in centimeters as needed
 ```
-5. Set log length and replace it in the execution platform
+
+5. Set the log length and replace it in the execution platform
 ```python
 log_length = 6  # Customize log length in meters as needed
 ```
+
+6. Set the distribuition model selected and replace it in the execution platform
+   
+The code evaluates your dataset against multiple distribution models and identifies the top five best-fitting distributions. Users can then choose the most suitable distribution for their analysis.
+```python
+probability = row['Rank 1: genextreme'] # Replace with your distribuition model selected
+```
+
 ####  Volume Estimation Process Explanation
 
 1. Volume observed for each class
