@@ -93,6 +93,19 @@ Where:\
 .  volume_estimated: The estimated volume for the current class.\
 .  total_volume_estimated: The running total of the estimated volume across all classes.
 
+# Citacion
+If you find this work useful for your research or applications, please consider citing our article published in Smart Agricultural Technology
+```
+@article{CASAS2024100653,
+  title     = {Quantifying solid volume of stacked eucalypt timber using detection-segmentation and diameter distribution models},
+  author    = {Gianmarco Goycochea Casas and Zool Hilmi Ismail and Mathaus Messias Coimbra Limeira and Carlos Pedro Boechat Soares and José Marinaldo Gleriani and Daniel Henrique Brada Binoti and Carlos Alberto {Araújo Júnior} and Mohd Ibrahim Shapiai and Leonardo Ippolito Rodrigues and Tassius Menezes Araújo and Helio Garcia Leite},
+  journal   = {Smart Agricultural Technology},
+  volume    = {9},
+  pages     = {100653},
+  year      = {2024},
+  doi       = {https://doi.org/10.1016/j.atech.2024.100653}
+}
+```
 # Contacts
 For any colaborations, questions, feedback, comments, or inquiries, please contact me at:
 
